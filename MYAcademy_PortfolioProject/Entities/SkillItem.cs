@@ -1,0 +1,17 @@
+﻿namespace MYAcademy_PortfolioProject.Entities
+{
+    public class SkillItem
+    {
+        public int SkillItemId { get; set; }
+        public string SkillItemTitle { get; set; }
+        public int SkillId { get; set; }
+        public Skill Skill { get; set; }
+    }
+}
+//Yapay Zeka --> Skill
+/*
+ * Gemini   -->SkillItem
+ * Claude   -->SkillItem
+ * Cursor   -->SkillItem
+ * Chatgpt  -->SkillItem
+ */
