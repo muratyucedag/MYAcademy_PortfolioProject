@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MYAcademy_PortfolioProject.Context;
+using MYAcademy_PortfolioProject.Entities;
 
 namespace MYAcademy_PortfolioProject.Areas.Admin.Controllers
 {
@@ -15,6 +16,20 @@ namespace MYAcademy_PortfolioProject.Areas.Admin.Controllers
         {
             var values = _context.Contacts.ToList();
             return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult CreateContact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateContact(Contact contact)
+        {
+            _context.Contacts.Add(contact);
+            _context.SaveChanges();
+            return RedirectToAction("ContactList");
         }
     }
 }
